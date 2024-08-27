@@ -1,0 +1,530 @@
+{
+	"info": {
+		"_postman_id": "978ca031-37a6-475f-ba2a-02a6fcb1f483",
+		"name": "Go Bash",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13328621"
+	},
+	"item": [
+		{
+			"name": "Dishes",
+			"item": [
+				{
+					"name": "Create Dish",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"name\": \"{{Name}}}\",\r\n    \"description\" :\"{{description}}\",\r\n    \"price\" :{{price}},\r\n    \"imageUrl\" :\"{{imageUrl}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/api/restaurants/{{restaurantId}}/dishes/admin",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"{{restaurantId}}",
+								"dishes",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all dishes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/api/restaurants/{{restaurantId}}/dishes?page={{page}}&limit={{limit}}",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"{{restaurantId}}",
+								"dishes"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "{{page}}"
+								},
+								{
+									"key": "limit",
+									"value": "{{limit}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search dishes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}api/restaurants/{{resturantId}}/dishes/search?searchTerm={{searchTerm}}&page={{page}}&limit={{limit}}",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}api"
+							],
+							"path": [
+								"restaurants",
+								"{{resturantId}}",
+								"dishes",
+								"search"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "{{searchTerm}}"
+								},
+								{
+									"key": "page",
+									"value": "{{page}}"
+								},
+								{
+									"key": "limit",
+									"value": "{{limit}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update dish",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"{{name}}\",\r\n        \"description\": \"{{description}}\",\r\n        \"price\": {{price}},\r\n        \"image\": \"{{imagUrl}}\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/api/restaurants/{{restaurantId}}/dishes/admin/{{dishId}}",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"{{restaurantId}}",
+								"dishes",
+								"admin",
+								"{{dishId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rate dish",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\" :{{rating}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/restaurants/{{restaurantId}}/dishes/{{dishId}}/rate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"restaurants",
+								"{{restaurantId}}",
+								"dishes",
+								"{{dishId}}",
+								"rate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete dish",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/api/restaurants/{{restaurantId}}/dishes/admin/{{dishId}}",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"{{restaurantId}}",
+								"dishes",
+								"admin",
+								"{{dishId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get dish by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/api/restaurants/{{restaurantId}}/dishes/admin/{{dishId}}",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"{{restaurantId}}",
+								"dishes",
+								"admin",
+								"{{dishId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurants",
+			"item": [
+				{
+					"name": "Create restaurant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"name\": \"{{restaurantName}}\",\r\n    \"description\" :\"{{Description}}\",\r\n    \"location\" :\"{{Restaurant location}}\",\r\n    \"imageUrl\" :\"{{image url}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/api/restaurants/",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all restaurants",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"name\": \"test dish\",\r\n    \"description\" :\"description\",\r\n    \"price\" :0,\r\n    \"image\" :\"image\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/api/restaurants?page={{page}}&limit={{limit}}",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "{{page}}"
+								},
+								{
+									"key": "limit",
+									"value": "{{limit}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update restaurant",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"name\": \"{{restaurantName}}\",\r\n    \"description\" :\"{{Description}}\",\r\n    \"location\" :\"{{Restaurant location}}\",\r\n    \"imageUrl\" :\"{{image url}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/api/restaurants/{{restaurantId}}",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"{{restaurantId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete restaurant",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/api/restaurants/{{restaurantId}}",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"{{restaurantId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get restaurant by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/api/restaurants/{{restaurantId}}",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"{{restaurantId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"name\": \"{{Name}}\",\r\n    \"email\" :\"{{customerEmail}}\",\r\n    \"password\" :\"{{password}}\",\r\n    \"permissions\" :[\"{{permissions}}}\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{baseUrl}}/api/restaurants/{{restaurantId}}/auth/register",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"restaurants",
+						"{{restaurantId}}",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"email\" :\"{{userEmail}}\",\r\n    \"password\" :\"{{password}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{baseUrl}}/api/restaurants/{{restaurantId}}/auth/login",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"restaurants",
+						"{{restaurantId}}",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjQxNzUzNzUsInVzZXJfaWQiOiI5ZGIyYWIwNS00Yjc4LTRjYjktODJjZC1iZThjYTY5MGViYWMifQ.TCA5voFd1XubfTRiaXxIbGIaapkqV4zcgOUnU4petWo",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
